@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derin Studio | کاتالوگ تعاملی و مدلسازی سه‌بعدی محصولات</title>
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">DERIN<span>STUDIO</span></div>
+        <nav>
+            <a href="#" class="nav-link active">خانه</a>
+            <a href="#portfolio" class="nav-link">نمونه‌کارها</a>
+            <a href="#features" class="nav-link">ویژگی‌های فنی</a>
+            <a href="#contact" class="nav-link">تماس با ما</a>
+        </nav>
+        <a href="tel:09351764005" class="nav-cta-btn">ثبت سفارش</a>
+    </header>
+
+    <main class="main-layout">
+        
+        <div class="hero-text-zone">
+            <span class="badge">B2B INDUSTRIAL 3D SERVICES</span>
+            <h1>محصولات شما را به مدل‌های سه‌بعدی استاندارد و قابل فروش تبدیل می‌کنیم.</h1>
+            <p>نسخه دیجیتال و دوقلوی محصولات فیزیکی خود را به معماران و مشتریان ارائه دهید. بهینه‌سازی شده برای وب‌سایت‌های فروشگاهی، واقعیت افزوده (AR) و کاتالوگ‌های تعاملی دکوراسیون.</p>
+            
+            <div class="action-buttons">
+                <a href="#portfolio" class="btn-gold">تست کاتالوگ تعاملی <i class="fa-solid fa-cube"></i></a>
+                <a href="tel:09351764005" class="btn-outline">مشاوره مستقیم با حامد قنبرزاده</a>
+            </div>
+        </div>
+
+        <div class="configurator-wrapper">
+            <div class="viewer-core">
+                
+                <div id="loading-overlay" class="loading-box">
+                    <div class="spinner"></div>
+                    <span>در حال بارگذاری مدل سه‌بعدی...</span>
+                </div>
+
+                <div class="floating-controls">
+                    <button class="control-circle" title="فعال‌سازی واقعیت افزوده" data-ar-trigger><i class="fa-solid fa-vr-cardboard"></i></button>
+                    <button class="control-circle" id="reset-camera" title="بازنشانی زاویه دید"><i class="fa-solid fa-arrows-to-eye"></i></button>
+                </div>
+
+                <model-viewer 
+                    id="derin-viewer"
+                    src="assets/models/model1.glb"
+                    alt="نمونه کیفیت مدلسازی درین استودیو"
+                    auto-rotate
+                    camera-controls
+                    interaction-prompt="none"
+                    shadow-intensity="1.2"
+                    shadow-softness="0.8"
+                    environment-image="neutral"
+                    exposure="1.1">
+                </model-viewer>
+
+                <aside class="material-sidebar">
+                    <div class="sidebar-header">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>شخصی‌سازی متریال</span>
+                    </div>
+                    
+                    <div class="control-block">
+                        <span class="block-title">جنس و رنگ پارچه</span>
+                        <div class="swatch-row" id="fabric-group">
+                            <button class="swatch-item active" style="background: #e1d6c7;" data-type="color" data-target="fabric" data-value="#e1d6c7" title="کرم خنثی"></button>
+                            <button class="swatch-item" style="background: #736c65;" data-type="color" data-target="fabric" data-value="#736c65" title="طوسی فیلی"></button>
+                            <button class="swatch-item" style="background: #2b2e33;" data-type="color" data-target="fabric" data-value="#2b2e33" title="زغالی"></button>
+                        </div>
+                    </div>
+
+                    <div class="control-block">
+                        <span class="block-title">نوع چوب پایه‌ها</span>
+                        <div class="swatch-row" id="wood-group">
+                            <button class="swatch-item active" style="background: #cd9a62;" data-type="color" data-target="wood" data-value="#cd9a62" title="راش"></button>
+                            <button class="swatch-item" style="background: #654321;" data-type="color" data-target="wood" data-value="#654321" title="گردو تیره"></button>
+                        </div>
+                    </div>
+
+                    <div class="control-block">
+                        <span class="block-title">جنس اتصالات فلزی</span>
+                        <div class="swatch-row" id="metal-group">
+                            <button class="swatch-item active" style="background: #d4af37;" data-type="pbr" data-target="metal" data-rough="0.2" data-metal="1" title="طلایی براق"></button>
+                            <button class="swatch-item" style="background: #eeeeee;" data-type="pbr" data-target="metal" data-rough="0.1" data-metal="1" title="کروم استیل"></button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="carousel-container" id="portfolio">
+                <button class="arrow-btn right" id="slide-right-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-item active" data-model-src="assets/models/model1.glb">
+                        <div class="thumb-preview" style="background-color: #222;"></div>
+                        <span class="item-name">محصول اول</span>
+                    </div>
+                    <div class="carousel-item" data-model-src="assets/models/model2.glb">
+                        <div class="thumb-preview" style="background-color: #222;"></div>
+                        <span class="item-name">محصول دوم</span>
+                    </div>
+                    <div class="carousel-item" data-model-src="assets/models/model3.glb">
+                        <div class="thumb-preview" style="background-color: #222;"></div>
+                        <span class="item-name">محصول سوم</span>
+                    </div>
+                    <div class="carousel-item" data-model-src="assets/models/model4.glb">
+                        <div class="thumb-preview" style="background-color: #222;"></div>
+                        <span class="item-name">محصول چهارم</span>
+                    </div>
+                    <div class="carousel-item" data-model-src="assets/models/model5.glb">
+                        <div class="thumb-preview" style="background-color: #222;"></div>
+                        <span class="item-name">محصول پنجم</span>
+                    </div>
+                </div>
+
+                <button class="arrow-btn left" id="slide-left-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <section class="features-section" id="features">
+        <div class="grid-card">
+            <i class="fa-solid fa-compass-drafting text-gold"></i>
+            <h3>مدل‌های دقیق و واقع‌گرایانه</h3>
+            <p>پایبندی کامل به ابعاد میلی‌متری، ساختار پایه‌ها، اتصالات و جزئیات منبت یا حکاکی واقعی محصول.</p>
+        </div>
+        <div class="grid-card">
+            <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+            <h3>تکسچرینگ حرفه‌ای PBR</h3>
+            <p>شبیه‌سازی دقیق بافت پارچه‌های مخمل، کتان، رگه‌های طبیعی چوب و میزان انعکاس فلزات تحت نور محیطی وب.</p>
+        </div>
+        <div class="grid-card">
+            <i class="fa-solid fa-rotate"></i>
+            <h3>نمایش ۳۶۰ درجه تعاملی</h3>
+            <p>امکان چرخش، زوم عمیق بدون افت کیفیت و بررسی تمام زوایای پنهان محصول توسط مشتری نهایی.</p>
+        </div>
+        <div class="grid-card">
+            <i class="fa-solid fa-gauge-high"></i>
+            <h3>بهینه‌سازی فوق‌العاده وب</h3>
+            <p>حجم مدل‌ها به طور مهندسی‌شده بدون کاهش کیفیت کاهش می‌یابد تا در موبایل و دیتای ضعیف فورا لود شوند.</p>
+        </div>
+        <div class="grid-card">
+            <i class="fa-solid fa-cubes-blur"></i>
+            <h3>فرمت‌های استاندارد جهانی</h3>
+            <p>ارائه خروجی‌های معتبر وب (GLB) و فایل‌های مخصوص طراحان داخلی جهت استفاده در تری‌دی‌مکس و وی‌ری.</p>
+        </div>
+    </section>
+
+    <footer class="footer-studio" id="contact">
+        <span class="footer-brand">DERIN STUDIO</span>
+        <h2>آماده‌اید کاتالوگ محصولات خود را هوشمند کنید؟</h2>
+        <p>جهت استعلام قیمت، بررسی کاتالوگ فیزیکی و دریافت مشاوره، مستقیماً تماس بگیرید یا در پلتفرم‌های اجتماعی پیام بگذارید.</p>
+        
+        <div class="contact-card-box">
+            <div class="manager-title">مدیریت استودیو: حامد قنبرزاده</div>
+            <a href="tel:09351764005" class="phone-link">0935 176 4005</a>
+            
+            <div class="social-networks">
+                <span class="net-badge telegram"><i class="fa-brands fa-telegram"></i> تلگرام فعال</span>
+                <span class="net-badge rubika"><i class="fa-solid fa-circle-check"></i> روبیکا فعال</span>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Derin Studio. تمامی حقوق برای طراح محفوظ است.</div>
+    </footer>
+
+    <script src="viewer.js"></script>
+</body>
+</html>
