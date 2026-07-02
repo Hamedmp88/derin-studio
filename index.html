@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derin Studio | استودیو درین</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -18,13 +18,14 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">خانه</a></li>
-            <li><a href="#services">خدمات</a></li>
+            <li><a href="#about">درباره ما</a></li>
             <li><a href="#contact">تماس با ما</a></li>
         </ul>
         <a href="#contact" class="btn-outline">درخواست پروژه</a>
     </nav>
 
     <main>
+        
         <section class="hero-container">
             <div class="hero-3d">
                 <model-viewer 
@@ -41,20 +42,20 @@
                     interaction-prompt="auto">
                     
                     <button slot="ar-button" class="ar-button">
-                        نمایش در محیط واقعی (AR)
+                        مشاهده در محیط واقعی (AR)
                     </button>
                 </model-viewer>
             </div>
 
             <div class="hero-content">
                 <h2>دقت، واقع‌گرایی و کیفیت در مدل‌سازی سه‌بعدی</h2>
-                <p>خلق آبجکت‌های سه‌بعدی بی‌نقص و دقیق بر اساس رفرنس‌های واقعی بازار. آماده برای استفاده در پروژه‌های معماری، رندرهای حرفه‌ای و پلتفرم‌های فروشگاهی.</p>
+                <p>خلق آبجکت‌های سه‌بعدی بی‌نقص بر اساس رفرنس‌های واقعی بازار؛ آماده برای پروژه‌های معماری و رندرهای حرفه‌ای.</p>
                 
                 <div class="materials">
-                    <button class="color-btn active" style="background-color: #1a1a1a;" data-color="1,1,1,1"></button>
-                    <button class="color-btn" style="background-color: #5c3a21;" data-color="0.5,0.2,0.1,1"></button>
-                    <button class="color-btn" style="background-color: #d1c1b0;" data-color="0.8,0.7,0.6,1"></button>
-                    <button class="color-btn" style="background-color: #2c402c;" data-color="0.2,0.4,0.2,1"></button>
+                    <button class="color-btn active" style="background-color: #1a1a1a;"></button>
+                    <button class="color-btn" style="background-color: #5c3a21;"></button>
+                    <button class="color-btn" style="background-color: #d1c1b0;"></button>
+                    <button class="color-btn" style="background-color: #2c402c;"></button>
                 </div>
             </div>
         </section>
@@ -62,46 +63,46 @@
         <section class="thumbnails-slider">
             <div class="thumbnails-track">
                 <div class="thumb active" data-src="assets/models/model1.glb" data-poster="assets/images/preview1.jpg">
-                    <img src="assets/images/preview1.jpg" alt="پیش‌نمایش ۱" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۱'">
+                    <img src="assets/images/preview1.jpg" alt="مدل ۱" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۱'">
                 </div>
                 <div class="thumb" data-src="assets/models/model2.glb" data-poster="assets/images/preview2.jpg">
-                    <img src="assets/images/preview2.jpg" alt="پیش‌نمایش ۲" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۲'">
+                    <img src="assets/images/preview2.jpg" alt="مدل ۲" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۲'">
                 </div>
                 <div class="thumb" data-src="assets/models/model3.glb" data-poster="assets/images/preview3.jpg">
-                    <img src="assets/images/preview3.jpg" alt="پیش‌نمایش ۳" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۳'">
+                    <img src="assets/images/preview3.jpg" alt="مدل ۳" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۳'">
                 </div>
                 <div class="thumb" data-src="assets/models/model4.glb" data-poster="assets/images/preview4.jpg">
-                    <img src="assets/images/preview4.jpg" alt="پیش‌نمایش ۴" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۴'">
+                    <img src="assets/images/preview4.jpg" alt="مدل ۴" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۴'">
                 </div>
                 <div class="thumb" data-src="assets/models/model5.glb" data-poster="assets/images/preview5.jpg">
-                    <img src="assets/images/preview5.jpg" alt="پیش‌نمایش ۵" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۵'">
+                    <img src="assets/images/preview5.jpg" alt="مدل ۵" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۵'">
                 </div>
             </div>
         </section>
 
-        <section class="about-visual-section">
+        <section id="about" class="about-visual-section">
             <div class="about-text-box">
                 <h3 class="section-title">خلق ارزش با جزئیات</h3>
-                <p>ما می‌دانیم که در پروژه‌های حرفه‌ای معماری و فروشگاه‌های مدرن، یک مدل سه‌بعدی فقط یک فایل نیست؛ بلکه نمایانگر کیفیت و هویت یک برند است. تمرکز ما روی ساخت آبجکت‌های کاملاً وفادار به واقعیت با متریال‌های دقیق است.</p>
+                <p>ما می‌دانیم که در پروژه‌های حرفه‌ای معماری، یک مدل سه‌بعدی فقط یک فایل نیست؛ بلکه نمایانگر کیفیت و هویت یک طراحی است. تمرکز ما روی ساخت آبجکت‌های کاملاً وفادار به واقعیت با متریال‌های دقیق است.</p>
             </div>
             <div class="about-image-box">
-                <img src="assets/images/about-render.jpg" alt="فضای داخلی استودیو" class="aesthetics-img">
+                <img src="assets/images/about-render.jpg" alt="رندر نمونه" class="aesthetics-img" onerror="this.style.display='none'">
             </div>
         </section>
 
         <section id="contact" class="bottom-section">
             <div class="contact-card">
                 <h3 class="section-title">راه‌های ارتباطی</h3>
-                <p>برای مشاوره، ثبت سفارش مدل‌سازی اختصاصی یا ارتباط مستقیم، از طریق زیر پیام بگذارید:</p>
+                <p>برای مشاوره و سفارش مدل‌سازی اختصاصی با من در ارتباط باشید:</p>
                 
                 <div class="contact-details">
                     <div class="contact-person">
                         <strong>حامد قنبرزاده</strong>
-                        <span dir="ltr" class="phone-number">+98 935 176 4005</span>
+                        <a href="tel:+989351764005" class="phone-number" dir="ltr">+98 935 176 4005</a>
                     </div>
                     
                     <div class="social-buttons">
-                        <a href="https://t.me/YourTelegramID" target="_blank" class="btn-social telegram">پیام در تلگرام</a>
+                        <a href="https://t.me/" target="_blank" class="btn-social telegram">پیام در تلگرام</a>
                         <a href="#" target="_blank" class="btn-social rubika">پیام در روبیکا</a>
                     </div>
                 </div>
