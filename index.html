@@ -2,11 +2,12 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Derin Studio | استودیو درین</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,6 +19,7 @@
         </div>
         <ul class="nav-links">
             <li><a href="#" class="active">خانه</a></li>
+            <li><a href="#services">خدمات</a></li>
             <li><a href="#about">درباره ما</a></li>
             <li><a href="#contact">تماس با ما</a></li>
         </ul>
@@ -25,8 +27,36 @@
     </nav>
 
     <main>
-        
         <section class="hero-container">
+            <div class="hero-content">
+                <h2>مدل‌سازی سه‌بعدی محصولات با بالاترین کیفیت</h2>
+                <p>ما در Derin Studio محصول شما را با دقت، جزئیات و متریال واقعی برای وب، واقعیت افزوده (AR) و فروشگاه‌های آنلاین آماده می‌کنیم.</p>
+                
+                <div class="materials-wrapper">
+                    <div class="materials">
+                        <button class="color-btn active" style="background-color: #111111;"></button>
+                        <button class="color-btn" style="background-color: #5c3a21;"></button>
+                        <button class="color-btn" style="background-color: #d1c1b0;"></button>
+                        <button class="color-btn" style="background-color: #2c402c;"></button>
+                    </div>
+                </div>
+
+                <div class="tech-features">
+                    <div class="feature-item">
+                        <span class="icon">🌐</span>
+                        <span>بهینه برای وب</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">📱</span>
+                        <span>سازگار با AR</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">✨</span>
+                        <span>کیفیت PBR</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="hero-3d">
                 <model-viewer 
                     id="main-viewer"
@@ -42,72 +72,105 @@
                     interaction-prompt="auto">
                     
                     <button slot="ar-button" class="ar-button">
-                        مشاهده در محیط واقعی (AR)
+                        مشاهده در محیط واقعی (AR) 📱
                     </button>
                 </model-viewer>
-            </div>
-
-            <div class="hero-content">
-                <h2>دقت، واقع‌گرایی و کیفیت در مدل‌سازی سه‌بعدی</h2>
-                <p>خلق آبجکت‌های سه‌بعدی بی‌نقص بر اساس رفرنس‌های واقعی بازار؛ آماده برای پروژه‌های معماری و رندرهای حرفه‌ای.</p>
-                
-                <div class="materials">
-                    <button class="color-btn active" style="background-color: #1a1a1a;"></button>
-                    <button class="color-btn" style="background-color: #5c3a21;"></button>
-                    <button class="color-btn" style="background-color: #d1c1b0;"></button>
-                    <button class="color-btn" style="background-color: #2c402c;"></button>
-                </div>
             </div>
         </section>
 
         <section class="thumbnails-slider">
+            <div class="slider-arrow prev-arrow">‹</div>
             <div class="thumbnails-track">
                 <div class="thumb active" data-src="assets/models/model1.glb" data-poster="assets/images/preview1.jpg">
-                    <img src="assets/images/preview1.jpg" alt="مدل ۱" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۱'">
+                    <img src="assets/images/preview1.jpg" alt="مدل ۱" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۱</span>')">
                 </div>
                 <div class="thumb" data-src="assets/models/model2.glb" data-poster="assets/images/preview2.jpg">
-                    <img src="assets/images/preview2.jpg" alt="مدل ۲" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۲'">
+                    <img src="assets/images/preview2.jpg" alt="مدل ۲" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۲</span>')">
                 </div>
                 <div class="thumb" data-src="assets/models/model3.glb" data-poster="assets/images/preview3.jpg">
-                    <img src="assets/images/preview3.jpg" alt="مدل ۳" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۳'">
+                    <img src="assets/images/preview3.jpg" alt="مدل ۳" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۳</span>')">
                 </div>
                 <div class="thumb" data-src="assets/models/model4.glb" data-poster="assets/images/preview4.jpg">
-                    <img src="assets/images/preview4.jpg" alt="مدل ۴" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۴'">
+                    <img src="assets/images/preview4.jpg" alt="مدل ۴" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۴</span>')">
                 </div>
                 <div class="thumb" data-src="assets/models/model5.glb" data-poster="assets/images/preview5.jpg">
-                    <img src="assets/images/preview5.jpg" alt="مدل ۵" onerror="this.style.display='none'; this.parentNode.innerHTML='مدل ۵'">
+                    <img src="assets/images/preview5.jpg" alt="مدل ۵" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۵</span>')">
+                </div>
+            </div>
+            <div class="slider-arrow next-arrow">›</div>
+        </section>
+
+        <section id="services" class="services-section">
+            <h3 class="section-title-center">خدمات ما</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h4>کیفیت بالا و متریال واقعی</h4>
+                    <p>استفاده از متریال PBR و نورپردازی واقعی برای خروجی‌های خیره‌کننده و وفادار به واقعیت.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h4>نمایش سه‌بعدی در وب</h4>
+                    <p>نمایش تعاملی، چرخش ۳۶۰ درجه و بررسی حرفه‌ای مدل‌ها مستقیماً در داخل مرورگر.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h4>آماده برای واقعیت افزوده</h4>
+                    <p>مدل‌های کاملاً بهینه شده و آماده جهت نمایش در فضای واقعی اتاق با تکنولوژی AR موبایل.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h4>مناسب فروشگاه‌های آنلاین</h4>
+                    <p>خروجی‌های فوق‌العاده سبک، استاندارد و سریع برای پلتفرم‌ها و مارکت‌پلیس‌های بین‌المللی.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-visual-section">
-            <div class="about-text-box">
-                <h3 class="section-title">خلق ارزش با جزئیات</h3>
-                <p>ما می‌دانیم که در پروژه‌های حرفه‌ای معماری، یک مدل سه‌بعدی فقط یک فایل نیست؛ بلکه نمایانگر کیفیت و هویت یک طراحی است. تمرکز ما روی ساخت آبجکت‌های کاملاً وفادار به واقعیت با متریال‌های دقیق است.</p>
-            </div>
-            <div class="about-image-box">
-                <img src="assets/images/about-render.jpg" alt="رندر نمونه" class="aesthetics-img" onerror="this.style.display='none'">
-            </div>
-        </section>
-
-        <section id="contact" class="bottom-section">
-            <div class="contact-card">
-                <h3 class="section-title">راه‌های ارتباطی</h3>
-                <p>برای مشاوره و سفارش مدل‌سازی اختصاصی با من در ارتباط باشید:</p>
+        <section class="footer-grid">
+            <div id="about" class="about-card">
+                <h3 class="section-title">درباره ما</h3>
+                <p>در Derin Studio ما با ترکیب هنر، تکنولوژی و دقت فنی، مدل‌های سه‌بعدی واقعی و جذاب برای برندها و کسب‌وکارها خلق می‌کنیم. هدف ما ارائه بهترین کیفیت برای نمایش محصول شما در هر پلتفرمی است.</p>
                 
-                <div class="contact-details">
-                    <div class="contact-person">
-                        <strong>حامد قنبرزاده</strong>
-                        <a href="tel:+989351764005" class="phone-number" dir="ltr">+98 935 176 4005</a>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">تعهد به کیفیت</span>
                     </div>
-                    
-                    <div class="social-buttons">
-                        <a href="https://t.me/" target="_blank" class="btn-social telegram">پیام در تلگرام</a>
-                        <a href="#" target="_blank" class="btn-social rubika">پیام در روبیکا</a>
+                    <div class="stat-item">
+                        <span class="stat-num">3</span>
+                        <span class="stat-label">سال تجربه</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">+30</span>
+                        <span class="stat-label">مشتریان راضی</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">+50</span>
+                        <span class="stat-label">پروژه انجام شده</span>
                     </div>
                 </div>
             </div>
+
+            <div id="contact" class="contact-card">
+                <h3 class="section-title">تماس با ما</h3>
+                <p>برای شروع پروژه خود یا ارتباط مستقیم، می‌توانید از راه‌های زیر اقدام کنید. در تلگرام و روبیکا همواره پاسخگو هستم:</p>
+                
+                <div class="contact-profile">
+                    <span class="profile-name">حامد قنبرزاده</span>
+                    <a href="tel:+989351764005" class="profile-phone" dir="ltr">+98 935 176 4005</a>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="https://t.me/hamedmp88" target="_blank" class="social-btn tg-btn">
+                        <span>ارتباط در تلگرام</span>
+                    </a>
+                    <a href="https://rubika.ir/" target="_blank" class="social-btn rb-btn">
+                        <span>ارتباط در روبیکا</span>
+                    </a>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <script src="script.js"></script>
