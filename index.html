@@ -1,178 +1,196 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Derin Studio | استودیو درین</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Derin Studio — مدل‌سازی و نمایش سه‌بعدی محصولات</title>
+<meta name="description" content="استودیوی مدل‌سازی سه‌بعدی محصولات؛ نمونه‌کارهای تعاملی، آماده وب و واقعیت افزوده.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+  }
+}
+</script>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <h1>DERIN STUDIO</h1>
-            <span>3D PRODUCT VISUALIZATION</span>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">خانه</a></li>
-            <li><a href="#services">خدمات</a></li>
-            <li><a href="#about">درباره ما</a></li>
-            <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-        <a href="#contact" class="btn-outline">درخواست پروژه</a>
+<a class="skip-link" href="#portfolio">رفتن به نمونه‌کارها</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Derin Studio — صفحه اصلی">
+      <span class="brand-name">Derin <span class="brand-accent">Studio</span></span>
+      <span class="brand-tag">مدل‌سازی سه‌بعدی محصولات</span>
+    </a>
+
+    <nav class="header-nav" aria-label="ناوبری اصلی">
+      <a href="#portfolio">نمونه‌کارها</a>
+      <a href="#contact">تماس</a>
     </nav>
 
-    <main>
-        <section class="hero-container">
-            <div class="hero-content">
-                <h2>مدل‌سازی سه‌بعدی محصولات با بالاترین کیفیت</h2>
-                <p>ما در Derin Studio محصول شما را با دقت، جزئیات و متریال واقعی برای وب، واقعیت افزوده (AR) و فروشگاه‌های آنلاین آماده می‌کنیم.</p>
-                
-                <div class="materials-wrapper">
-                    <div class="materials">
-                        <button class="color-btn active" style="background-color: #111111;"></button>
-                        <button class="color-btn" style="background-color: #5c3a21;"></button>
-                        <button class="color-btn" style="background-color: #d1c1b0;"></button>
-                        <button class="color-btn" style="background-color: #2c402c;"></button>
-                    </div>
-                </div>
+    <a href="#contact" class="btn btn-accent header-cta">
+      <span>شروع پروژه</span>
+    </a>
+  </div>
+</header>
 
-                <div class="tech-features">
-                    <div class="feature-item">
-                        <span class="icon">🌐</span>
-                        <span>بهینه برای وب</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="icon">📱</span>
-                        <span>سازگار با AR</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="icon">✨</span>
-                        <span>کیفیت PBR</span>
-                    </div>
-                </div>
-            </div>
+<main id="top">
 
-            <div class="hero-3d">
-                <model-viewer 
-                    id="main-viewer"
-                    src="assets/models/model1.glb" 
-                    poster="assets/images/preview1.jpg"
-                    ar 
-                    ar-modes="webxr scene-viewer quick-look" 
-                    camera-controls 
-                    auto-rotate 
-                    shadow-intensity="1.5"
-                    environment-image="neutral"
-                    exposure="1"
-                    interaction-prompt="auto">
-                    
-                    <button slot="ar-button" class="ar-button">
-                        مشاهده در محیط واقعی (AR) 📱
-                    </button>
-                </model-viewer>
-            </div>
-        </section>
+  <!-- ================= INTRO ================= -->
+  <section class="intro container" id="intro">
+    <p class="eyebrow">استودیوی مدل‌سازی سه‌بعدی</p>
+    <h1 class="intro-title">
+      محصول شما،
+      <span class="accent-text">واقعی‌تر از واقعیت</span>
+    </h1>
+    <p class="intro-sub">
+      مدل‌های سه‌بعدی تعاملی با کیفیت استودیویی؛ آماده نمایش در وب، فروشگاه آنلاین و واقعیت افزوده.
+    </p>
+  </section>
 
-        <section class="thumbnails-slider">
-            <div class="slider-arrow prev-arrow">‹</div>
-            <div class="thumbnails-track">
-                <div class="thumb active" data-src="assets/models/model1.glb" data-poster="assets/images/preview1.jpg">
-                    <img src="assets/images/preview1.jpg" alt="مدل ۱" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۱</span>')">
-                </div>
-                <div class="thumb" data-src="assets/models/model2.glb" data-poster="assets/images/preview2.jpg">
-                    <img src="assets/images/preview2.jpg" alt="مدل ۲" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۲</span>')">
-                </div>
-                <div class="thumb" data-src="assets/models/model3.glb" data-poster="assets/images/preview3.jpg">
-                    <img src="assets/images/preview3.jpg" alt="مدل ۳" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۳</span>')">
-                </div>
-                <div class="thumb" data-src="assets/models/model4.glb" data-poster="assets/images/preview4.jpg">
-                    <img src="assets/images/preview4.jpg" alt="مدل ۴" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۴</span>')">
-                </div>
-                <div class="thumb" data-src="assets/models/model5.glb" data-poster="assets/images/preview5.jpg">
-                    <img src="assets/images/preview5.jpg" alt="مدل ۵" onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend', '<span class=\'thumb-fallback\'>مدل ۵</span>')">
-                </div>
-            </div>
-            <div class="slider-arrow next-arrow">›</div>
-        </section>
+  <!-- ================= PORTFOLIO ================= -->
+  <section class="portfolio container" id="portfolio">
 
-        <section id="services" class="services-section">
-            <h3 class="section-title-center">خدمات ما</h3>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💎</div>
-                    <h4>کیفیت بالا و متریال واقعی</h4>
-                    <p>استفاده از متریال PBR و نورپردازی واقعی برای خروجی‌های خیره‌کننده و وفادار به واقعیت.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h4>نمایش سه‌بعدی در وب</h4>
-                    <p>نمایش تعاملی، چرخش ۳۶۰ درجه و بررسی حرفه‌ای مدل‌ها مستقیماً در داخل مرورگر.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h4>آماده برای واقعیت افزوده</h4>
-                    <p>مدل‌های کاملاً بهینه شده و آماده جهت نمایش در فضای واقعی اتاق با تکنولوژی AR موبایل.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛒</div>
-                    <h4>مناسب فروشگاه‌های آنلاین</h4>
-                    <p>خروجی‌های فوق‌العاده سبک، استاندارد و سریع برای پلتفرم‌ها و مارکت‌پلیس‌های بین‌المللی.</p>
-                </div>
-            </div>
-        </section>
+    <div class="stage-shell">
+      <div class="stage" id="stage">
+        <div class="stage-glow" aria-hidden="true"></div>
+        <div class="stage-ring" aria-hidden="true"></div>
 
-        <section class="footer-grid">
-            <div id="about" class="about-card">
-                <h3 class="section-title">درباره ما</h3>
-                <p>در Derin Studio ما با ترکیب هنر، تکنولوژی و دقت فنی، مدل‌های سه‌بعدی واقعی و جذاب برای برندها و کسب‌وکارها خلق می‌کنیم. هدف ما ارائه بهترین کیفیت برای نمایش محصول شما در هر پلتفرمی است.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-num">100%</span>
-                        <span class="stat-label">تعهد به کیفیت</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">3</span>
-                        <span class="stat-label">سال تجربه</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">+30</span>
-                        <span class="stat-label">مشتریان راضی</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">+50</span>
-                        <span class="stat-label">پروژه انجام شده</span>
-                    </div>
-                </div>
-            </div>
+        <canvas id="viewer-canvas"></canvas>
 
-            <div id="contact" class="contact-card">
-                <h3 class="section-title">تماس با ما</h3>
-                <p>برای شروع پروژه خود یا ارتباط مستقیم، می‌توانید از راه‌های زیر اقدام کنید. در تلگرام و روبیکا همواره پاسخگو هستم:</p>
-                
-                <div class="contact-profile">
-                    <span class="profile-name">حامد قنبرزاده</span>
-                    <a href="tel:+989351764005" class="profile-phone" dir="ltr">+98 935 176 4005</a>
-                </div>
+        <img class="stage-poster" id="stage-poster" src="" alt="">
 
-                <div class="action-buttons">
-                    <a href="https://t.me/hamedmp88" target="_blank" class="social-btn tg-btn">
-                        <span>ارتباط در تلگرام</span>
-                    </a>
-                    <a href="https://rubika.ir/" target="_blank" class="social-btn rb-btn">
-                        <span>ارتباط در روبیکا</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+        <button class="stage-cta" id="stage-cta" type="button">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3.5-7.1"/><path d="M3 4v5h5"/></svg>
+          <span>برای مشاهده سه‌بعدی، کلیک کنید</span>
+        </button>
 
-    </main>
+        <div class="stage-status" id="stage-loading" hidden>
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="stage-loading-text">در حال بارگذاری مدل…</span>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="stage-status stage-error" id="stage-error" hidden>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg>
+          <span>مدل بارگذاری نشد. فایل را بررسی کنید.</span>
+          <button type="button" class="btn btn-ghost btn-small" id="stage-retry">تلاش دوباره</button>
+        </div>
+
+        <div class="stage-topbar">
+          <div class="stage-info">
+            <h2 id="stage-title">—</h2>
+            <span class="tag" id="stage-tag">GLB · Real-time</span>
+          </div>
+        </div>
+
+        <div class="stage-controls" id="stage-controls">
+          <button class="ctrl-btn" id="btn-autorotate" type="button" title="چرخش خودکار" aria-pressed="false">
+            <svg class="icon icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon icon-pause" viewBox="0 0 24 24" fill="currentColor" hidden><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+          </button>
+
+          <span class="ctrl-divider" aria-hidden="true"></span>
+
+          <button class="ctrl-btn" id="btn-zoom-out" type="button" title="کوچک‌نمایی">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14"/></svg>
+          </button>
+          <button class="ctrl-btn" id="btn-zoom-in" type="button" title="بزرگ‌نمایی">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+
+          <span class="ctrl-divider" aria-hidden="true"></span>
+
+          <button class="ctrl-btn" id="btn-ar" type="button" title="مشاهده در واقعیت افزوده" hidden>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 7.5v9L12 21l8-4.5v-9L12 3Z"/><path d="M4 7.5 12 12l8-4.5"/><path d="M12 12v9"/></svg>
+          </button>
+          <button class="ctrl-btn" id="btn-fullscreen" type="button" title="تمام‌صفحه">
+            <svg class="icon icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H4v5M15 4h5v5M15 20h5v-5M9 20H4v-5"/></svg>
+            <svg class="icon icon-compress" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M4 9h5V4M15 4v5h5M20 15h-5v5M9 20v-5H4"/></svg>
+          </button>
+        </div>
+
+        <p class="stage-hint">برای چرخاندن بکشید — برای بزرگ‌نمایی اسکرول کنید</p>
+      </div>
+    </div>
+
+    <div class="filmstrip" id="filmstrip" role="tablist" aria-label="انتخاب نمونه‌کار"></div>
+
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-copy">
+        <p class="eyebrow">تماس با ما</p>
+        <h2>بیایید پروژه بعدی‌تان را بسازیم</h2>
+        <p class="contact-desc">برای مدل‌سازی سه‌بعدی محصول، نمایش وب یا واقعیت افزوده، از راه‌های زیر در ارتباط باشید.</p>
+
+        <div class="contact-person">
+          <span class="contact-person-name">حامد قنبرزاده</span>
+          <span class="contact-person-role">Derin Studio</span>
+        </div>
+
+        <a class="contact-phone" href="tel:+989351764005" dir="ltr">+98 935 176 4005</a>
+      </div>
+
+      <div class="contact-channels">
+        <a class="channel-card" href="tel:+989351764005">
+          <span class="channel-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2-.5c1 .3 2 .6 3 .7a2 2 0 0 1 1.7 2Z"/></svg>
+          </span>
+          <span class="channel-text">
+            <strong>تماس تلفنی</strong>
+            <small dir="ltr">+98 935 176 4005</small>
+          </span>
+        </a>
+
+        <a class="channel-card" href="https://t.me/989351764005" target="_blank" rel="noopener">
+          <span class="channel-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m21 4-19 8.2 6.3 2M21 4l-3.2 16-8.5-6.3M21 4 9.8 15.2v5.3l3-3.4"/></svg>
+          </span>
+          <span class="channel-text">
+            <strong>تلگرام</strong>
+            <small>ارسال پیام مستقیم</small>
+          </span>
+        </a>
+
+        <a class="channel-card" href="#" target="_blank" rel="noopener">
+          <span class="channel-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+          </span>
+          <span class="channel-text">
+            <strong>روبیکا</strong>
+            <small>ارسال پیام مستقیم</small>
+          </span>
+        </a>
+
+        <a class="channel-card" href="mailto:info@derinstudio.ir">
+          <span class="channel-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+          </span>
+          <span class="channel-text">
+            <strong>ایمیل</strong>
+            <small dir="ltr">info@derinstudio.ir</small>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <p class="footer-note">© Derin Studio — طراحی و مدل‌سازی سه‌بعدی محصولات</p>
+  </section>
+
+</main>
+
+<script type="module" src="script.js"></script>
 </body>
 </html>
