@@ -13,11 +13,11 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
    1) Project data — edit titles / filenames here
    -------------------------------------------------------------------------- */
 const PROJECTS = [
-  { title: 'صندلی طراحی',      model: 'assets/models/model1.glb', preview: 'assets/models/preview01.jpg' },
-  { title: 'ساعت مچی لوکس',    model: 'assets/models/model2.glb', preview: 'assets/models/preview02.jpg' },
-  { title: 'چراغ رومیزی',       model: 'assets/models/model3.glb', preview: 'assets/models/preview03.jpg' },
-  { title: 'دوربین حرفه‌ای',    model: 'assets/models/model4.glb', preview: 'assets/models/preview04.jpg' },
-  { title: 'مبل کلاسیک',        model: 'assets/models/model5.glb', preview: 'assets/models/preview05.jpg' },
+  { title: 'صندلی طراحی',      model: 'assets/models/model01.glb', preview: 'assets/models/preview01.jpg' },
+  { title: 'ساعت مچی لوکس',    model: 'assets/models/model02.glb', preview: 'assets/models/preview02.jpg' },
+  { title: 'چراغ رومیزی',       model: 'assets/models/model03.glb', preview: 'assets/models/preview03.jpg' },
+  { title: 'دوربین حرفه‌ای',    model: 'assets/models/model04.glb', preview: 'assets/models/preview04.jpg' },
+  { title: 'مبل کلاسیک',        model: 'assets/models/model05.glb', preview: 'assets/models/preview05.jpg' },
 ];
 
 /* --------------------------------------------------------------------------
