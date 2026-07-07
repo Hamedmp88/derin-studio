@@ -9,7 +9,8 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
-alert("SCRIPT VERSION 2");
+console.log("SCRIPT VERSION 2");
+document.body.style.background = "red";
 /* --------------------------------------------------------------------------
    1) Project data — edit titles / filenames here
    -------------------------------------------------------------------------- */
