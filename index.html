@@ -1,227 +1,154 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Derin Studio | طراحی و مدل‌سازی سه‌بعدی</title>
-<meta name="description" content="Derin Studio — استودیوی طراحی و مدل‌سازی سه‌بعدی حامد قنبرزاده. نمایش تعاملی نمونه‌کارها با قابلیت چرخش، بزرگ‌نمایی و واقعیت افزوده.">
-<meta name="theme-color" content="#0F1115">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derin Studio | Portfolio</title>
+    <meta name="description" content="نمایش حرفه‌ای ایده‌های سه‌بعدی - حامد قنبرزاده">
+    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
 <body>
 
-<a href="#main" class="skip-link">رفتن به محتوای اصلی</a>
-
-<header class="site-header" id="siteHeader">
-  <div class="container header-inner">
-    <a href="#top" class="brand">Derin Studio</a>
-
-    <nav class="nav" id="siteNav" aria-label="ناوبری اصلی">
-      <a href="#top" data-nav>خانه</a>
-      <a href="#portfolio" data-nav>نمونه‌کارها</a>
-      <a href="#contact" data-nav>تماس با من</a>
-    </nav>
-
-    <button class="nav-toggle" id="navToggle" aria-label="باز کردن منو" aria-expanded="false" aria-controls="siteNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="top">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div class="hero-grid" aria-hidden="true"></div>
-
-    <div class="container hero-inner">
-      <div class="hero-content" data-reveal>
-        <p class="eyebrow">استودیو طراحی و مدل‌سازی سه‌بعدی</p>
-        <h1 class="hero-title">هر ایده،<br><span class="text-accent">یک مدل سه‌بعدی زنده.</span></h1>
-        <p class="hero-text">
-          من حامد قنبرزاده هستم؛ طراح و مدل‌ساز سه‌بعدی در Derin Studio.
-          نمونه‌کارهای این صفحه را می‌توانید از هر زاویه بچرخانید، بزرگ‌نمایی کنید
-          و برای برخی مدل‌ها حتی جنس و رنگ را به دلخواه تغییر دهید.
-        </p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-primary">مشاهده نمونه‌کارها</a>
-          <a href="#contact" class="btn btn-ghost">شروع همکاری</a>
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo">Derin Studio</h1>
+            <nav class="nav-links">
+                <a href="#portfolio">نمونه کارها</a>
+                <a href="#contact">تماس با من</a>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit-ring orbit-ring-1"></div>
-        <div class="orbit-ring orbit-ring-2"></div>
-        <div class="orbit-ring orbit-ring-3"></div>
-        <div class="orbit-core"></div>
-        <div class="orbit-dot orbit-dot-1"></div>
-        <div class="orbit-dot orbit-dot-2"></div>
-      </div>
-    </div>
-  </section>
+    <section class="hero container">
+        <div class="hero-content">
+            <span class="badge">طراحی. جزئیات. تجربه.</span>
+            <h2 class="hero-title">نمایش حرفه‌ای<br>ایده‌های سه‌بعدی</h2>
+            <p class="hero-desc">
+                مدل‌سازی و رندرینگ محصولات و فضاهای معماری<br>با تمرکز بر جزئیات، متریال و واقع‌گرایی.
+            </p>
+        </div>
+    </section>
 
-  <!-- ===================== PORTFOLIO ===================== -->
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="section-eyebrow">۰۱</span>
-        <h2>نمونه‌کارها</h2>
-      </div>
+    <section id="portfolio" class="container">
+        <div class="section-header">
+            <div class="indicator"></div>
+            <h3>نمونه کارها</h3>
+            <p class="subtitle">برای مشاهده مدل در محیط سه‌بعدی، روی هر تصویر کلیک کنید.</p>
+        </div>
 
-      <!-- Viewer Panel -->
-      <div class="viewer-panel" id="viewerPanel" hidden>
-        <div class="viewer-panel-inner">
-
-          <div class="viewer-top">
-            <button class="viewer-back" id="viewerBack" type="button">
-              <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M9 6l6 6-6 6" transform="rotate(180 12 12)"/></svg>
-              <span id="viewerTitle">Model</span>
-            </button>
-          </div>
-
-          <div class="viewer-body">
-
-            <div class="viewer-stage">
-              <model-viewer
-                id="mainViewer"
-                camera-controls
-                touch-action="pan-y"
-                interaction-prompt="none"
-                environment-image="neutral"
-                shadow-intensity="1"
-                shadow-softness="0.9"
-                exposure="1"
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                ar-scale="auto">
-
-                <div class="progress-bar" slot="progress-bar" id="progressBar">
-                  <div class="progress-bar-fill" id="progressBarFill"></div>
+        <div class="portfolio-grid">
+            <div class="model-card" data-id="1">
+                <div class="card-img-wrapper">
+                    <img src="assets/models/preview1.jpg" alt="Model 1 Preview" loading="lazy">
                 </div>
-
-                <button slot="ar-button" class="btn-ar" id="arBtn" type="button">
-                  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v9"/></svg>
-                  مشاهده در واقعیت افزوده
-                </button>
-              </model-viewer>
-
-              <div class="viewer-controls" id="viewerControls">
-                <button type="button" id="btnReset" class="ctrl-btn" title="بازگشت به حالت اولیه" aria-label="بازگشت به حالت اولیه">
-                  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M3 12a9 9 0 1 1 3 6.7"/><path d="M3 21v-6h6"/></svg>
-                </button>
-                <button type="button" id="btnAutoRotate" class="ctrl-btn is-active" title="چرخش خودکار" aria-label="چرخش خودکار" aria-pressed="true">
-                  <svg viewBox="0 0 24 24" class="icon icon-rotate" aria-hidden="true"><ellipse cx="12" cy="12" rx="9" ry="5"/><circle cx="19" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>
-                </button>
-                <button type="button" id="btnZoomIn" class="ctrl-btn" title="بزرگ‌نمایی" aria-label="بزرگ‌نمایی">
-                  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M21 21l-4.3-4.3"/></svg>
-                </button>
-                <button type="button" id="btnZoomOut" class="ctrl-btn" title="کوچک‌نمایی" aria-label="کوچک‌نمایی">
-                  <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M21 21l-4.3-4.3"/></svg>
-                </button>
-                <button type="button" id="btnFullscreen" class="ctrl-btn" title="تمام‌صفحه" aria-label="تمام‌صفحه">
-                  <svg viewBox="0 0 24 24" class="icon" id="fsIcon" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
-                </button>
-              </div>
+                <div class="card-info">
+                    <h4>Model 1</h4>
+                    <p>مبل راحتی (با قابلیت تغییر متریال)</p>
+                </div>
+            </div>
+            
+            <div class="model-card" data-id="2">
+                <div class="card-img-wrapper">
+                    <img src="assets/models/preview2.jpg" alt="Model 2 Preview" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h4>Model 2</h4>
+                    <p>صندلی ناهارخوری (با قابلیت تغییر متریال)</p>
+                </div>
             </div>
 
-            <aside class="material-panel" id="materialPanel" hidden></aside>
+            <div class="model-card" data-id="3">
+                <div class="card-img-wrapper">
+                    <img src="assets/models/preview3.jpg" alt="Model 3 Preview" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h4>Model 3</h4>
+                    <p>تخت استخری</p>
+                </div>
+            </div>
 
-          </div>
+            <div class="model-card" data-id="4">
+                <div class="card-img-wrapper">
+                    <img src="assets/models/preview4.jpg" alt="Model 4 Preview" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h4>Model 4</h4>
+                    <p>میز ناهارخوری</p>
+                </div>
+            </div>
+
+            <div class="model-card" data-id="5">
+                <div class="card-img-wrapper">
+                    <img src="assets/models/preview5.jpg" alt="Model 5 Preview" loading="lazy">
+                </div>
+                <div class="card-info">
+                    <h4>Model 5</h4>
+                    <p>ست مبلمان فضای باز</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Grid -->
-      <div class="portfolio-grid" id="portfolioGrid" data-reveal>
-        <article class="portfolio-card" data-model-id="1">
-          <button class="portfolio-card-btn" type="button" aria-label="نمایش سه‌بعدی Model 1">
-            <img src="assets/models/preview1.jpg" alt="Model 1" loading="lazy" decoding="async">
-            <span class="portfolio-card-overlay"></span>
-            <span class="portfolio-card-label">Model 1</span>
-          </button>
-        </article>
-        <article class="portfolio-card" data-model-id="2">
-          <button class="portfolio-card-btn" type="button" aria-label="نمایش سه‌بعدی Model 2">
-            <img src="assets/models/preview2.jpg" alt="Model 2" loading="lazy" decoding="async">
-            <span class="portfolio-card-overlay"></span>
-            <span class="portfolio-card-label">Model 2</span>
-          </button>
-        </article>
-        <article class="portfolio-card" data-model-id="3">
-          <button class="portfolio-card-btn" type="button" aria-label="نمایش سه‌بعدی Model 3">
-            <img src="assets/models/preview3.jpg" alt="Model 3" loading="lazy" decoding="async">
-            <span class="portfolio-card-overlay"></span>
-            <span class="portfolio-card-label">Model 3</span>
-          </button>
-        </article>
-        <article class="portfolio-card" data-model-id="4">
-          <button class="portfolio-card-btn" type="button" aria-label="نمایش سه‌بعدی Model 4">
-            <img src="assets/models/preview4.jpg" alt="Model 4" loading="lazy" decoding="async">
-            <span class="portfolio-card-overlay"></span>
-            <span class="portfolio-card-label">Model 4</span>
-          </button>
-        </article>
-        <article class="portfolio-card" data-model-id="5">
-          <button class="portfolio-card-btn" type="button" aria-label="نمایش سه‌بعدی Model 5">
-            <img src="assets/models/preview5.jpg" alt="Model 5" loading="lazy" decoding="async">
-            <span class="portfolio-card-overlay"></span>
-            <span class="portfolio-card-label">Model 5</span>
-          </button>
-        </article>
-      </div>
+    <div id="model-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h4 id="modal-title">Model Viewer</h4>
+                <button class="close-btn" id="close-modal">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <aside id="material-panel" class="material-panel hidden">
+                    <div id="material-controls"></div>
+                    <div class="material-info">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <p>تغییر متریال فقط برای مدل‌های ۱ و ۲ فعال است.</p>
+                    </div>
+                </aside>
+
+                <div class="viewer-wrapper" id="viewer-wrapper">
+                    </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section class="contact" id="contact">
-    <div class="contact-glow" aria-hidden="true"></div>
-    <div class="container contact-inner" data-reveal>
-      <span class="section-eyebrow">۰۲</span>
-      <h2>تماس با من</h2>
-      <p class="contact-text">
-        اگر پروژه‌ای در ذهن دارید یا تمایل به همکاری با من دارید،
-        از طریق راه‌های ارتباطی زیر در تماس باشید.
-      </p>
+    <section id="contact" class="container contact-section">
+        <div class="section-header">
+            <div class="indicator"></div>
+            <h3>تماس با من</h3>
+        </div>
+        <div class="contact-content">
+            <p class="contact-text">اگر پروژه‌ای در ذهن دارید یا تمایل به همکاری دارید، از طریق راه‌های ارتباطی زیر با من (حامد قنبرزاده) در تماس باشید.</p>
+            <div class="contact-links">
+                <a href="tel:+989351764005" class="contact-btn">
+                    <span class="icon">📞</span>
+                    <span dir="ltr">+98 935 176 4005</span>
+                </a>
+                <a href="https://t.me/your_telegram_id" target="_blank" class="contact-btn">
+                    <span class="icon">✈️</span>
+                    Telegram
+                </a>
+                <a href="#" target="_blank" class="contact-btn">
+                    <span class="icon">📱</span>
+                    Rubika
+                </a>
+                <a href="mailto:your_email@domain.com" class="contact-btn">
+                    <span class="icon">✉️</span>
+                    Email
+                </a>
+            </div>
+        </div>
+    </section>
 
-      <div class="contact-methods">
-        <!-- Telegram deep-link by phone number -->
-        <a class="contact-btn" href="https://t.me/+989351764005" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M21 4 3 11l6 2m12-9-4 16-6-6m10-10L9 13"/></svg>
-          Telegram
-        </a>
-        <!-- Rubika: replace with exact profile link if different -->
-        <a class="contact-btn" href="https://rubika.ir/derinstudio" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3M21 4v6h-6"/></svg>
-          Rubika
-        </a>
-        <!-- TODO: replace with the real email address -->
-        <a class="contact-btn" href="mailto:info@derinstudio.ir">
-          <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 6 8 7 8-7"/></svg>
-          Email
-        </a>
-      </div>
+    <footer class="footer">
+        <p>© 2024 Derin Studio. All rights reserved.</p>
+    </footer>
 
-      <a class="contact-phone" href="tel:+989351764005" dir="ltr">
-        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg>
-        +989351764005
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© <span id="year"></span> Derin Studio — تمامی حقوق محفوظ است.</span>
-  </div>
-</footer>
-
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-<script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
