@@ -217,11 +217,21 @@ function loadModel(url){
       }
     },
     (err) => {
-      console.error('Model failed to load:', url, err);
-      isLoading = false;
-      showState({ poster: true, cta: false, loading: false, error: true, canvasVisible: false });
-    }
+  console.error('Model failed to load:', url, err);
+
+  alert(
+    "Model failed:\n\n" +
+    (err?.message || JSON.stringify(err, null, 2))
   );
+
+  isLoading = false;
+  showState({
+    poster: true,
+    cta: false,
+    loading: false,
+    error: true,
+    canvasVisible: false
+  });
 }
 
 retryBtn.addEventListener('click', () => {
