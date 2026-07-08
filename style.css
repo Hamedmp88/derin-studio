@@ -77,9 +77,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .header-inner { display: flex; justify-content: space-between; align-items: center; height: 72px; }
-.logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; }
+.logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.5px; }
 .nav-links { display: flex; gap: 24px; }
-.nav-links a { color: var(--text-secondary); font-size: 0.9rem; transition: var(--transition); }
+.nav-links a { color: var(--text-secondary); font-size: 1.1rem; transition: var(--transition); }
 .nav-links a:hover { color: var(--text-primary); }
 
 /* Hero Section */
@@ -107,7 +107,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     --poster-color: transparent; 
 }
 
-.badge { display: inline-block; color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
+.badge { display: inline-block; color: var(--accent); font-size: 0.9rem; font-weight: 500; margin-bottom: 16px; }
 .hero-title { font-size: 3.2rem; line-height: 1.2; margin-bottom: 24px; font-weight: 800; letter-spacing: -1px; }
 .hero-desc { font-size: 1rem; color: var(--text-secondary); margin-bottom: 32px; }
 
@@ -152,7 +152,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* آماده‌سازی کارت‌ها پیش از اسکرول */
 .model-card {
     opacity: 0; 
-    transform: translateY(30px) scale(0.96);
+    transform: translateY(30px) scale(0.92);
     filter: blur(10px);
 }
 
@@ -167,16 +167,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* اجرای انیمیشن هنگام رسیدن به بخش نمونه‌کارها */
 #portfolio.active .model-card {
-    animation: cinematicFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: cinematicFadeUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* تاخیر زمانی با ریتم تندتر برای جلوگیری از خستگی چشم */
-#portfolio.active .model-card:nth-child(1) { animation-delay: 0.1s; }
-#portfolio.active .model-card:nth-child(2) { animation-delay: 0.2s; }
-#portfolio.active .model-card:nth-child(3) { animation-delay: 0.3s; }
-#portfolio.active .model-card:nth-child(4) { animation-delay: 0.4s; }
-#portfolio.active .model-card:nth-child(5) { animation-delay: 0.5s; }
-#portfolio.active .model-card:nth-child(6) { animation-delay: 0.6s; }
+#portfolio.active .model-card:nth-child(1) { animation-delay: 0.2s; }
+#portfolio.active .model-card:nth-child(2) { animation-delay: 0.3s; }
+#portfolio.active .model-card:nth-child(3) { animation-delay: 0.4s; }
+#portfolio.active .model-card:nth-child(4) { animation-delay: 0.5s; }
+#portfolio.active .model-card:nth-child(5) { animation-delay: 0.6s; }
+#portfolio.active .model-card:nth-child(6) { animation-delay: 0.7s; }
 
 /* Portfolio Grid */
 .portfolio-grid {
