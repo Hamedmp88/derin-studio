@@ -185,3 +185,36 @@ async function applyTexture(materialName, texturePath) {
         console.error('Error applying texture:', error);
     }
 }
+// ==========================================
+// Scroll Reveal Animations (Intersection Observer)
+// ==========================================
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealOptions = {
+    threshold: 0.15, // وقتی ۱۵ درصد از کادر وارد صفحه شد، انیمیشن اجرا می‌شود
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            // اضافه کردن کلاس active برای اجرای انیمیشن CSS
+            entry.target.classList.add('active');
+            // متوقف کردن بررسی مجدد (تا انیمیشن فقط یک‌بار موقع اسکرول به پایین اجرا شود)
+            observer.unobserve(entry.target); 
+        }
+    });
+}, revealOptions);
+
+// اعمال آبزرور روی تمام المان‌هایی که کلاس reveal دارند
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});
+
+// استثنا برای بخش هیرو: برای اینکه به محض باز شدن سایت، هیرو بدون نیاز به اسکرول ظاهر شود
+window.addEventListener('load', () => {
+    const hero = document.querySelector('.hero.reveal');
+    if (hero) hero.classList.add('active');
+});
