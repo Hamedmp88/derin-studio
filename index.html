@@ -13,6 +13,7 @@
 </head>
 <body>
 
+    <!-- گرادیانت پس‌زمینه -->
     <div class="bg-gradient" id="bg-gradient"></div>
 
     <header class="header">
@@ -25,6 +26,7 @@
         </div>
     </header>
 
+    <!-- بخش معرفی و مدل استودیویی -->
     <section class="hero container reveal">
         <div class="hero-content">
             <span class="badge">طراحی. جزئیات. تجربه.</span>
@@ -35,6 +37,7 @@
             <a href="#portfolio" class="btn-primary">مشاهده نمونه کارها ←</a>
         </div>
         <div class="hero-model-container">
+            <!-- مدل سبک برای هیرو -->
             <model-viewer 
                 src="assets/models/model0.glb" 
                 auto-rotate 
@@ -51,6 +54,7 @@
         </div>
     </section>
 
+    <!-- بخش پورتفولیو -->
     <section id="portfolio" class="container reveal">
         <div class="section-header">
             <div class="header-title-wrapper">
@@ -101,6 +105,7 @@
                 </div>
             </div>
 
+            <!-- کارت به زودی -->
             <div class="model-card placeholder-card">
                 <div class="card-img-wrapper placeholder-wrapper">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -113,10 +118,10 @@
         </div>
     </section>
 
+    <!-- مودال نمایش سه‌بعدی -->
     <div id="model-modal" class="modal hidden">
         <div class="modal-backdrop"></div>
         <div class="modal-container">
-            <div class="progress-bar-container"><div class="progress-bar" id="progress-bar"></div></div>
             
             <div class="modal-header">
                 <h4 id="modal-title">Model Viewer</h4>
@@ -132,11 +137,14 @@
                     </div>
                 </aside>
 
-                <div class="viewer-wrapper" id="viewer-wrapper"></div>
+                <div class="viewer-wrapper" id="viewer-wrapper">
+                    <!-- کدهای Model-Viewer و Loading Overlay اینجا توسط JS تزریق می‌شوند -->
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- بخش تماس با من -->
     <section id="contact" class="container contact-section reveal">
         <div class="section-header">
             <div class="header-title-wrapper">
