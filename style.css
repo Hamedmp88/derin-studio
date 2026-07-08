@@ -132,42 +132,51 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .subtitle { color: var(--text-secondary); font-size: 0.85rem; margin-top: 8px; }
 
 /* ==========================================
-   Reveal Animations & Cascade Effect
+   Premium Cinematic Reveal Effect
    ========================================== */
 .reveal { 
     opacity: 0; 
-    transform: translateY(50px); 
-    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 1, 0.5, 1); 
+    transform: translateY(40px) scale(0.96); 
+    filter: blur(12px); /* افکت فوکوس لنز دوربین */
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1); 
 }
 
 .reveal.active { 
     opacity: 1; 
-    transform: translateY(0); 
+    transform: translateY(0) scale(1); 
+    filter: blur(0);
 }
 
-/* در ابتدا کارت‌ها را مخفی نگه می‌داریم */
+/* آماده‌سازی کارت‌ها پیش از اسکرول */
 .model-card {
     opacity: 0; 
+    transform: translateY(30px) scale(0.96);
+    filter: blur(10px);
 }
 
-/* انیمیشن نرم برای بالا آمدن کارت‌ها */
-@keyframes fadeUpCard {
-    0% { opacity: 0; transform: translateY(40px); }
-    100% { opacity: 1; transform: translateY(0); }
+/* انیمیشن سینماتیک برای ظاهر شدن کارت‌ها */
+@keyframes cinematicFadeUp {
+    100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+        filter: blur(0); 
+    }
 }
 
-/* وقتی اسکرول به بخش پورتفولیو رسید، انیمیشن را روی کارت‌ها اعمال کن */
+/* اجرای انیمیشن هنگام رسیدن به بخش نمونه‌کارها */
 #portfolio.active .model-card {
-    animation: fadeUpCard 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: cinematicFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* ایجاد تاخیر زمانی برای تک‌تک کارت‌ها (جلوه آبشاری) */
+/* تاخیر زمانی با ریتم تندتر برای جلوگیری از خستگی چشم */
 #portfolio.active .model-card:nth-child(1) { animation-delay: 0.1s; }
-#portfolio.active .model-card:nth-child(2) { animation-delay: 0.25s; }
-#portfolio.active .model-card:nth-child(3) { animation-delay: 0.4s; }
-#portfolio.active .model-card:nth-child(4) { animation-delay: 0.55s; }
-#portfolio.active .model-card:nth-child(5) { animation-delay: 0.7s; }
-#portfolio.active .model-card:nth-child(6) { animation-delay: 0.85s; }
+#portfolio.active .model-card:nth-child(2) { animation-delay: 0.2s; }
+#portfolio.active .model-card:nth-child(3) { animation-delay: 0.3s; }
+#portfolio.active .model-card:nth-child(4) { animation-delay: 0.4s; }
+#portfolio.active .model-card:nth-child(5) { animation-delay: 0.5s; }
+#portfolio.active .model-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* Portfolio Grid */
 .portfolio-grid {
