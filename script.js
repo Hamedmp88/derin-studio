@@ -1,3 +1,4 @@
+// اطلاعات لوکال مدل‌ها و متریال‌ها
 const modelsData = {
     1: {
         title: 'Model 1 - مبل راحتی',
@@ -54,27 +55,48 @@ const cards = document.querySelectorAll('.model-card:not(.placeholder-card)');
 
 let currentViewer = null;
 
-// انیمیشن اسکرول (Reveal) و جابجایی گرادیانت محو
+// ==========================================
+// 1. منطق اسکرول (جلوه‌ها و انیمیشن‌ها)
+// ==========================================
 window.addEventListener('scroll', () => {
-    const reveals = document.querySelectorAll('.reveal');
+    // الف) جابجایی نرم گرادیانت پس زمینه
     const scrollY = window.scrollY;
-    
-    // جابجایی نرم گرادیانت پس زمینه
     document.getElementById('bg-gradient').style.transform = `translate(${scrollY * -0.05}px, ${scrollY * 0.15}px)`;
-
-    reveals.forEach(reveal => {
-        const windowHeight = window.innerHeight;
-        const revealTop = reveal.getBoundingClientRect().top;
-        if (revealTop < windowHeight - 50) {
-            reveal.classList.add('active');
-        }
-    });
 });
 
-// اجرای اولیه اسکرول برای المنت های روی صفحه
-window.dispatchEvent(new Event('scroll'));
+// ب) Scroll Reveal Animations ( Intersection Observer )
+const revealElements = document.querySelectorAll('.reveal');
 
-// منطق مودال
+const revealOptions = {
+    threshold: 0.15, // وقتی ۱۵ درصد المان وارد شد، اجرا می‌شود
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); 
+        }
+    });
+}, revealOptions);
+
+revealElements.forEach(el => {
+    revealOnScroll.observe(el);
+});
+
+// استثنا برای هیرو: برای اینکه به محض باز شدن سایت بدون نیاز به اسکرول ظاهر شود
+window.addEventListener('load', () => {
+    const hero = document.querySelector('.hero.reveal');
+    if (hero) hero.classList.add('active');
+});
+
+
+// ==========================================
+// 2. منطق مودال و Model Viewer
+// ==========================================
 cards.forEach(card => {
     card.addEventListener('click', () => openModal(card.getAttribute('data-id')));
 });
@@ -90,7 +112,7 @@ function openModal(id) {
 
     modalTitle.textContent = data.title;
     
-    // تزریق Overlay لودینگ همراه با خود مدل در قالب مودال
+    // تزریق Overlay لودینگ همراه با خود مدل و HDR
     viewerWrapper.innerHTML = `
         <div class="loading-overlay" id="loading-overlay">
             <span class="loading-text">در حال بارگذاری مدل...</span>
@@ -104,7 +126,7 @@ function openModal(id) {
             camera-controls 
             auto-rotate 
             rotation-per-second="30deg"
-            environment-image="neutral" 
+            environment-image="assets/models/studio_lighting.hdr" 
             shadow-intensity="1"
             exposure="1"
             ar>
@@ -146,6 +168,9 @@ function closeModal() {
     }, 300);
 }
 
+// ==========================================
+// 3. منطق تغییر متریال
+// ==========================================
 function buildMaterialUI(materials) {
     materialControls.innerHTML = '';
     for (const [matName, options] of Object.entries(materials)) {
@@ -185,36 +210,3 @@ async function applyTexture(materialName, texturePath) {
         console.error('Error applying texture:', error);
     }
 }
-// ==========================================
-// Scroll Reveal Animations (Intersection Observer)
-// ==========================================
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealOptions = {
-    threshold: 0.15, // وقتی ۱۵ درصد از کادر وارد صفحه شد، انیمیشن اجرا می‌شود
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            // اضافه کردن کلاس active برای اجرای انیمیشن CSS
-            entry.target.classList.add('active');
-            // متوقف کردن بررسی مجدد (تا انیمیشن فقط یک‌بار موقع اسکرول به پایین اجرا شود)
-            observer.unobserve(entry.target); 
-        }
-    });
-}, revealOptions);
-
-// اعمال آبزرور روی تمام المان‌هایی که کلاس reveal دارند
-revealElements.forEach(el => {
-    revealOnScroll.observe(el);
-});
-
-// استثنا برای بخش هیرو: برای اینکه به محض باز شدن سایت، هیرو بدون نیاز به اسکرول ظاهر شود
-window.addEventListener('load', () => {
-    const hero = document.querySelector('.hero.reveal');
-    if (hero) hero.classList.add('active');
-});
