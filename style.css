@@ -200,5 +200,4 @@ model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
     .material-panel { width: 100%; border-left: none; border-top: 1px solid var(--border); padding: 16px; max-height: 25vh; flex-direction: row; gap: 20px; overflow-x: auto; }
     .swatch { width: 30px; height: 30px; }
     .material-info { display: none; }
-                   }
-                     
+}
