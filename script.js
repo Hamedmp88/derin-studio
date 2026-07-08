@@ -23,15 +23,18 @@ const modelsData = {
         materials: {
             'Fabric': [
                 { id: 'm2fab1', color: '#37474F', texture: 'assets/textures/m2_fabric1.jpg' },
-                { id: 'm2fab2', color: '#4E342E', texture: 'assets/textures/m2_fabric2.jpg' }
+                { id: 'm2fab2', color: '#4E342E', texture: 'assets/textures/m2_fabric2.jpg' },
+                { id: 'm2fab3', color: '#263238', texture: 'assets/textures/m2_fabric3.jpg' }
             ],
             'Body': [
                 { id: 'body1', color: '#BCAAA4', texture: 'assets/textures/m2_body1.jpg' },
-                { id: 'body2', color: '#A1887F', texture: 'assets/textures/m2_body2.jpg' }
+                { id: 'body2', color: '#A1887F', texture: 'assets/textures/m2_body2.jpg' },
+                { id: 'body3', color: '#8D6E63', texture: 'assets/textures/m2_body3.jpg' }
             ],
             'Base': [
                 { id: 'base1', color: '#212121', texture: 'assets/textures/m2_base1.jpg' },
-                { id: 'base2', color: '#616161', texture: 'assets/textures/m2_base3.jpg' }
+                { id: 'base2', color: '#424242', texture: 'assets/textures/m2_base2.jpg' },
+                { id: 'base3', color: '#616161', texture: 'assets/textures/m2_base3.jpg' }
             ]
         }
     },
@@ -47,7 +50,6 @@ const viewerWrapper = document.getElementById('viewer-wrapper');
 const materialPanel = document.getElementById('material-panel');
 const materialControls = document.getElementById('material-controls');
 const modalTitle = document.getElementById('modal-title');
-const progressBar = document.getElementById('progress-bar');
 const cards = document.querySelectorAll('.model-card:not(.placeholder-card)');
 
 let currentViewer = null;
@@ -87,9 +89,15 @@ function openModal(id) {
     if (!data) return;
 
     modalTitle.textContent = data.title;
-    progressBar.style.width = '0%';
     
+    // تزریق Overlay لودینگ همراه با خود مدل در قالب مودال
     viewerWrapper.innerHTML = `
+        <div class="loading-overlay" id="loading-overlay">
+            <span class="loading-text">در حال بارگذاری مدل...</span>
+            <div class="loading-bar-container">
+                <div class="loading-bar-fill" id="loading-bar-fill"></div>
+            </div>
+        </div>
         <model-viewer 
             id="active-viewer"
             src="${data.src}" 
@@ -104,13 +112,18 @@ function openModal(id) {
     `;
     
     currentViewer = document.getElementById('active-viewer');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingBarFill = document.getElementById('loading-bar-fill');
 
-    // مدیریت نوار پیشرفت (لودینگ)
+    // اتصال درصد دانلود به لودینگ بار
     currentViewer.addEventListener('progress', (event) => {
         const progress = event.detail.totalProgress * 100;
-        progressBar.style.width = `${progress}%`;
+        loadingBarFill.style.width = `${progress}%`;
+        
         if (progress === 100) {
-            setTimeout(() => progressBar.style.opacity = '0', 300);
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+            }, 400); 
         }
     });
 
@@ -130,8 +143,6 @@ function closeModal() {
     setTimeout(() => {
         viewerWrapper.innerHTML = ''; 
         currentViewer = null;
-        progressBar.style.opacity = '1';
-        progressBar.style.width = '0%';
     }, 300);
 }
 
