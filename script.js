@@ -23,19 +23,19 @@ const modelsData = {
         hasMaterials: true,
         materials: {
             'Fabric': [
-                { id: 'm2fab1', color: '#37474F', texture: 'assets/textures/m2_fabric1.jpg' },
-                { id: 'm2fab2', color: '#4E342E', texture: 'assets/textures/m2_fabric2.jpg' },
-                { id: 'm2fab3', color: '#263238', texture: 'assets/textures/m2_fabric3.jpg' }
+                { id: 'm2fab1', color: '#41533b', texture: 'assets/textures/m2_fabric1.jpg' },
+                { id: 'm2fab2', color: '#4e4e4e', texture: 'assets/textures/m2_fabric2.jpg' },
+                { id: 'm2fab3', color: '#364060', texture: 'assets/textures/m2_fabric3.jpg' }
             ],
             'Body': [
-                { id: 'body1', color: '#BCAAA4', texture: 'assets/textures/m2_body1.jpg' },
-                { id: 'body2', color: '#A1887F', texture: 'assets/textures/m2_body2.jpg' },
-                { id: 'body3', color: '#8D6E63', texture: 'assets/textures/m2_body3.jpg' }
+                { id: 'body1', color: '#b9a083', texture: 'assets/textures/m2_body1.jpg' },
+                { id: 'body2', color: '#8a765e', texture: 'assets/textures/m2_body2.jpg' },
+                { id: 'body3', color: '#1d1d1d', texture: 'assets/textures/m2_body3.jpg' }
             ],
             'Base': [
-                { id: 'base1', color: '#212121', texture: 'assets/textures/m2_body1.jpg' },
-                { id: 'base2', color: '#424242', texture: 'assets/textures/m2_body2.jpg' },
-                { id: 'base3', color: '#616161', texture: 'assets/textures/m2_body3.jpg' }
+                { id: 'base1', color: '#b9a083', texture: 'assets/textures/m2_body1.jpg' },
+                { id: 'base2', color: '#8a765e', texture: 'assets/textures/m2_body2.jpg' },
+                { id: 'base3', color: '#1d1d1d', texture: 'assets/textures/m2_body3.jpg' }
             ]
         }
     },
