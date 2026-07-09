@@ -33,9 +33,9 @@ const modelsData = {
                 { id: 'body3', color: '#8D6E63', texture: 'assets/textures/m2_body3.jpg' }
             ],
             'Base': [
-                { id: 'base1', color: '#212121', texture: 'assets/textures/m2_base1.jpg' },
-                { id: 'base2', color: '#424242', texture: 'assets/textures/m2_base2.jpg' },
-                { id: 'base3', color: '#616161', texture: 'assets/textures/m2_base3.jpg' }
+                { id: 'base1', color: '#212121', texture: 'assets/textures/m2_body1.jpg' },
+                { id: 'base2', color: '#424242', texture: 'assets/textures/m2_body2.jpg' },
+                { id: 'base3', color: '#616161', texture: 'assets/textures/m2_body3.jpg' }
             ]
         }
     },
