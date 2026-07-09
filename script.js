@@ -6,14 +6,14 @@ const modelsData = {
         hasMaterials: true,
         materials: {
             'Fabric': [
-                { id: 'fab1', color: '#D1C4E9', texture: 'assets/textures/m1_fabric1.jpg' },
-                { id: 'fab2', color: '#C8E6C9', texture: 'assets/textures/m1_fabric2.jpg' },
-                { id: 'fab3', color: '#FFCDD2', texture: 'assets/textures/m1_fabric3.jpg' }
+                { id: 'fab1', color: '#050505', texture: 'assets/textures/m1_fabric1.jpg' },
+                { id: 'fab2', color: '#3e1d00', texture: 'assets/textures/m1_fabric2.jpg' },
+                { id: 'fab3', color: '#a65814', texture: 'assets/textures/m1_fabric3.jpg' }
             ],
             'Wood': [
-                { id: 'wood1', color: '#8D6E63', texture: 'assets/textures/m1_wood1.jpg' },
-                { id: 'wood2', color: '#5D4037', texture: 'assets/textures/m1_wood2.jpg' },
-                { id: 'wood3', color: '#3E2723', texture: 'assets/textures/m1_wood3.jpg' }
+                { id: 'wood1', color: '#050505', texture: 'assets/textures/m1_wood1.jpg' },
+                { id: 'wood2', color: '#3e1d00', texture: 'assets/textures/m1_wood2.jpg' },
+                { id: 'wood3', color: '#a65814', texture: 'assets/textures/m1_wood3.jpg' }
             ]
         }
     },
