@@ -22,17 +22,17 @@ const modelsData = {
         src: 'assets/models/model2.glb',
         hasMaterials: true,
         materials: {
-            'Fabric': [
+            'fabric': [
                 { id: 'm2fab1', color: '#41533b', texture: 'assets/textures/m2_fabric1.jpg' },
                 { id: 'm2fab2', color: '#4e4e4e', texture: 'assets/textures/m2_fabric2.jpg' },
                 { id: 'm2fab3', color: '#364060', texture: 'assets/textures/m2_fabric3.jpg' }
             ],
-            'Body': [
+            'body': [
                 { id: 'body1', color: '#b9a083', texture: 'assets/textures/m2_body1.jpg' },
                 { id: 'body2', color: '#8a765e', texture: 'assets/textures/m2_body2.jpg' },
                 { id: 'body3', color: '#1d1d1d', texture: 'assets/textures/m2_body3.jpg' }
             ],
-            'Base': [
+            'leg': [
                 { id: 'base1', color: '#b9a083', texture: 'assets/textures/m2_body1.jpg' },
                 { id: 'base2', color: '#8a765e', texture: 'assets/textures/m2_body2.jpg' },
                 { id: 'base3', color: '#1d1d1d', texture: 'assets/textures/m2_body3.jpg' }
