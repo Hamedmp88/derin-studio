@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <!-- ========================================================================
+       Derin Studio | حامد همای (Hamed Homay)
+       پورتفولیو تخصصی مدل‌سازی سه‌بعدی، متریال‌پردازی PBR و واقعیت افزوده (AR/VR)
+       ======================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derin Studio | حامد همای - پورتفولیو سه‌بعدی و AR/VR</title>
+  <meta name="description" content="Derin Studio - Hamed Homay | 3D Product Modeling, PBR Texturing, Interactive GLB Viewer & WebAR Portfolio." />
+
+  <!-- فونت فارسی وزیرمتن و فونت انگلیسی Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- فایل استایل‌های سایت -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- کتابخانه رسمی Google Model Viewer برای اجرای فایل‌های GLB و واقعیت افزوده (AR) -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+  <!-- نورپردازی پس‌زمینه استودیویی -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="perspective-grid"></div>
+  </div>
+
+  <!-- ========================================================================
+       ۱. هدر و نوار منوی بالای سایت (همراه با دکمه تغییر زبان FA / EN)
+       ======================================================================== -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="brand-logo">
+        <span class="logo-cube"></span>
+        <span id="nav-logo-text">Derin Studio</span>
+      </a>
+
+      <!-- دکمه منوی موبایل -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
+        <a href="#hero" class="nav-link active" data-i18n="navHero">ویترین</a>
+        <a href="#lab-3d" class="nav-link" data-i18n="navLab">آزمایشگاه 3D و AR</a>
+        <a href="#comparison" class="nav-link" data-i18n="navCompare">توپولوژی و متریال</a>
+        <a href="#renders" class="nav-link" data-i18n="navRenders">گالری رندر (۱۰ اثر)</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">درباره من</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">تماس با من</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- دکمه تغییر زبان کل سایت (فارسی <-> انگلیسی) -->
+        <button class="lang-toggle-btn" id="lang-toggle" title="Switch Language / تغییر زبان">
+          🌐 <span id="lang-btn-label">EN</span>
+        </button>
+
+        <!-- دکمه تغییر تم تاریک / روشن -->
+        <button class="theme-toggle-btn" id="theme-toggle" title="تغییر تم (Dark / Light)">
+          <span class="theme-icon" id="theme-icon">☀️</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm" data-i18n="orderBtn">سفارش پروژه</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         ۲. بخش اول (Hero Section) - معرفی Derin Studio و حامد همای + مدل اول
+         ====================================================================== -->
+    <section class="hero-section section-padding" id="hero">
+      <div class="container hero-grid">
+        
+        <div class="hero-content reveal-up">
+          <div class="badge-pill">
+            <span class="pulse-dot"></span>
+            <span id="hero-badge">درین استودیو • حامد همای</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span id="hero-title-1">خلق محصولات سه‌بعدی در</span>
+            <br />
+            <span class="gradient-text" id="hero-title-highlight">Derin Studio با بالاترین استاندارد AR و VR</span>
+          </h1>
+
+          <p class="hero-subtitle" id="hero-subtitle"></p>
+
+          <div class="hero-cta-group">
+            <a href="#lab-3d" class="btn btn-primary btn-lg">
+              <span data-i18n="heroCtaPrimary">ورود به آزمایشگاه 3D / AR</span>
+            </a>
+            <a href="#renders" class="btn btn-glass btn-lg">
+              <span data-i18n="heroCtaSecondary">مشاهده گالری رندرها</span>
+            </a>
+          </div>
+
+          <!-- آمارهای کلیدی -->
+          <div class="hero-stats" id="hero-stats-container"></div>
+        </div>
+
+        <!-- ویوئر سه‌بعدی بخش اول (مرتبط با model01.glb و preview01.jpg) -->
+        <div class="hero-viewer-card reveal-scale">
+          <div class="viewer-floating-header">
+            <span class="live-tag">
+              <span class="live-dot"></span>
+              <span data-i18n="heroViewerTag">پیش‌نمایش تعاملی GLB</span>
+            </span>
+            <span class="viewer-hint" data-i18n="heroViewerHint">🖱️ با ماوس بچرخانید و زوم کنید</span>
+          </div>
+
+          <model-viewer
+            id="hero-model-viewer"
+            src="assets/models/model01.glb"
+            poster="assets/models/preview01.jpg"
+            alt="Derin Studio Featured 3D Model"
+            auto-rotate
+            camera-controls
+            touch-action="pan-y"
+            shadow-intensity="1.2"
+            exposure="1.05"
+            environment-image="neutral"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+          >
+            <button slot="ar-button" class="ar-native-badge" data-i18n="arBadgeText">
+              📱 مشاهده در فضای واقعی (AR)
+            </button>
+          </model-viewer>
+
+          <!-- نوار تغییر سریع رنگ/متریال زیر مدل هیرو -->
+          <div class="hero-quick-bar">
+            <span class="quick-label" data-i18n="heroQuickMatLabel">تغییر سریع متریال:</span>
+            <div class="hero-swatches" id="hero-swatches">
+              <button class="swatch-dot active" style="background:#6366f1" data-color="#6366f1" data-metal="0.85" data-rough="0.18" title="Indigo"></button>
+              <button class="swatch-dot" style="background:#38bdf8" data-color="#38bdf8" data-metal="0.90" data-rough="0.15" title="Cyan"></button>
+              <button class="swatch-dot" style="background:#f59e0b" data-color="#fbbf24" data-metal="0.95" data-rough="0.15" title="Gold"></button>
+              <button class="swatch-dot" style="background:#10b981" data-color="#10b981" data-metal="0.85" data-rough="0.20" title="Emerald"></button>
+              <button class="swatch-dot" style="background:#ec4899" data-color="#f472b6" data-metal="0.88" data-rough="0.18" title="Rose"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ۳. آزمایشگاه سه‌بعدی و واقعیت افزوده (model01.glb تا model10.glb)
+         همراه با کارت‌های پیش‌نمایش (preview01.jpg تا preview10.jpg) که با کلیک روی آن‌ها
+         فایل GLB مربوطه شروع به دانلود و نمایش سه‌بعدی می‌کند.
+         ====================================================================== -->
+    <section class="lab-section section-padding" id="lab-3d">
+      <div class="container">
+        
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" data-i18n="labEyebrow">DERIN STUDIO • INTERACTIVE GLB & WEBAR LAB</span>
+          <h2 class="section-title" data-i18n="labTitle">آزمایشگاه سه‌بعدی و تغییر متریال زنده (مدل ۰۱ تا ۱۰)</h2>
+          <p class="section-desc" data-i18n="labDesc">
+            روی هر یک از پیش‌نمایش‌های زیر (preview01 تا preview10) کلیک کنید تا فایل سه‌بعدی آن (model01.glb تا model10.glb) دانلود و در ویوئر بارگذاری شود.
+          </p>
+        </div>
+
+        <!-- شبکه ۱۰ کارت پیش‌نمایش (preview01.jpg تا preview10.jpg) -->
+        <div class="model-preview-grid reveal-up" id="model-selector-grid"></div>
+
+        <!-- میز کار اصلی استودیو سه‌بعدی -->
+        <div class="studio-workspace reveal-up" id="studio-workspace-anchor">
+          
+          <!-- ستون ویوئر سه‌بعدی -->
+          <div class="studio-viewport-wrapper">
+            
+            <!-- نوار ابزار بالای ویوئر -->
+            <div class="viewport-toolbar">
+              <div class="toolbar-group">
+                <button class="tool-btn active" id="btn-autorotate" data-i18n="btnAutoRotate">
+                  🔄 چرخش خودکار
+                </button>
+                <button class="tool-btn" id="btn-reset-cam" data-i18n="btnResetCam">
+                  🎯 ریست زاویه
+                </button>
+              </div>
+
+              <div class="toolbar-group">
+                <label class="hdri-label" for="hdri-select" data-i18n="hdriLabel">💡 نور محیط (HDRI):</label>
+                <select id="hdri-select" class="hdri-select">
+                  <option value="neutral" data-i18n="hdriNeutral">استودیویی خنثی (Neutral)</option>
+                  <option value="legacy" data-i18n="hdriContrast">کنتراست بالا (Sharp)</option>
+                  <option value="https://modelviewer.dev/shared-assets/environments/spruit_sunrise_1k_HDR.hdr" data-i18n="hdriSunrise">طلوع گرم (Sunrise)</option>
+                  <option value="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr" data-i18n="hdriWorkshop">کارگاه صنعتی (Workshop)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- ناحیه نمایش مدل یا پوستر پیش‌نمایش (قبل از کلیک برای دانلود) -->
+            <div class="viewport-stage">
+              
+              <!-- کاور پیش‌نمایش (previewXX.jpg) که با کلیک روی آن مدل GLB شروع به دانلود می‌کند -->
+              <div class="preview-poster-overlay" id="preview-poster-overlay">
+                <img src="assets/models/preview01.jpg" alt="Model Preview" id="poster-overlay-img" class="poster-overlay-img" />
+                <div class="poster-overlay-glass">
+                  <span class="poster-model-badge" id="poster-model-badge">model01.glb</span>
+                  <h4 id="poster-overlay-title" data-i18n="posterOverlayTitle">آماده بارگذاری مدل سه‌بعدی</h4>
+                  <button class="btn btn-primary btn-lg" id="btn-load-glb-now">
+                    <span data-i18n="posterOverlayBtn">📦 دانلود و باز کردن مدل سه‌بعدی (.GLB)</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- نوار پیشرفت دانلود فایل GLB -->
+              <div class="glb-loading-overlay hidden" id="glb-loading-overlay">
+                <div class="spinner"></div>
+                <p id="glb-loading-text" data-i18n="loadingModelText">در حال دانلود و آماده‌سازی مدل سه‌بعدی...</p>
+                <div class="download-progress-track">
+                  <div class="download-progress-bar" id="download-progress-bar"></div>
+                </div>
+                <span class="download-percent" id="download-percent">0%</span>
+              </div>
+
+              <!-- تگ اصلی model-viewer -->
+              <model-viewer
+                id="studio-model-viewer"
+                src=""
+                poster="assets/models/preview01.jpg"
+                alt="Derin Studio 3D Interactive Asset"
+                auto-rotate
+                camera-controls
+                touch-action="pan-y"
+                shadow-intensity="1.3"
+                shadow-softness="0.8"
+                exposure="1.0"
+                environment-image="neutral"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                ar-scale="auto"
+              >
+                <button slot="ar-button" class="studio-ar-launch-btn" data-i18n="arBadgeText">
+                  📱 مشاهده در فضای واقعی (AR)
+                </button>
+              </model-viewer>
+            </div>
+
+            <!-- نوار مشخصات فنی پایین ویوئر -->
+            <div class="tech-inspector-bar">
+              <div class="tech-item">
+                <span class="tech-label" data-i18n="specPolycount">تعداد مثلث‌ها (Polycount):</span>
+                <strong class="tech-val" id="spec-polycount">--</strong>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label" data-i18n="specTexture">رزولوشن تکسچر:</span>
+                <strong class="tech-val" id="spec-texture">--</strong>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label" data-i18n="specFilesize">فایل مدل:</span>
+                <strong class="tech-val" id="spec-filesize">--</strong>
+              </div>
+              <div class="tech-item">
+                <span class="tech-label" data-i18n="specArStatus">وضعیت AR:</span>
+                <strong class="tech-val status-ready">✅ WebXR / iOS Ready</strong>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- پنل کنترل متریال، شیدر و واقعیت افزوده -->
+          <aside class="studio-controls-panel">
+            
+            <div class="panel-header">
+              <span class="badge-category" id="active-model-category">AR / VR Product</span>
+              <h3 id="active-model-title">عنوان مدل سه‌بعدی</h3>
+              <p id="active-model-desc">توضیحات فنی مدل</p>
+            </div>
+
+            <!-- ۱. انتخاب متریال و رنگ -->
+            <div class="control-block">
+              <div class="control-title-row">
+                <h4 data-i18n="matSwatchesTitle">🎨 انتخاب متریال و رنگ (Swatches)</h4>
+                <span class="active-mat-name" id="active-mat-name">--</span>
+              </div>
+              <div class="material-swatches-list" id="studio-swatches-container"></div>
+            </div>
+
+            <!-- ۲. اسلایدرهای تنظیم زنده PBR -->
+            <div class="control-block">
+              <h4 data-i18n="pbrSlidersTitle">⚙️ تنظیم زنده خواص متریال (PBR)</h4>
+              
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span data-i18n="lblMetallic">فلزی بودن (Metallic)</span>
+                  <span id="val-metallic" class="mono-val">0.85</span>
+                </div>
+                <input type="range" id="slider-metallic" min="0" max="1" step="0.05" value="0.85" />
+              </div>
+
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span data-i18n="lblRoughness">زبری و ماتی (Roughness)</span>
+                  <span id="val-roughness" class="mono-val">0.20</span>
+                </div>
+                <input type="range" id="slider-roughness" min="0" max="1" step="0.05" value="0.20" />
+              </div>
+
+              <div class="slider-row">
+                <div class="slider-label">
+                  <span data-i18n="lblExposure">شدت نور (Exposure)</span>
+                  <span id="val-exposure" class="mono-val">1.00</span>
+                </div>
+                <input type="range" id="slider-exposure" min="0.4" max="2.2" step="0.1" value="1.0" />
+              </div>
+            </div>
+
+            <!-- ۳. دکمه‌های واقعیت افزوده (AR) -->
+            <div class="control-block ar-cta-box">
+              <h4 data-i18n="arBoxTitle">🕶️ تست در محیط واقعی شما (AR)</h4>
+              <p class="ar-box-note" data-i18n="arBoxNote"></p>
+              <div class="ar-buttons-stack">
+                <button class="btn btn-primary btn-full" id="btn-trigger-ar" data-i18n="btnTriggerAr">
+                  📱 جاگذاری مدل در محیط با دوربین (AR)
+                </button>
+                <button class="btn btn-glass btn-full" id="btn-open-qr" data-i18n="btnOpenQr">
+                  📷 نمایش QR Code برای موبایل
+                </button>
+              </div>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ۴. بخش مقایسه قبل و بعد (Wireframe vs Final Render Slider)
+         ====================================================================== -->
+    <section class="comparison-section section-padding" id="comparison">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" data-i18n="compEyebrow">WIREFRAME VS. FINAL PBR RENDER</span>
+          <h2 class="section-title" data-i18n="compTitle">دقت در توپولوژی، مهارت در متریال‌پردازی</h2>
+          <p class="section-desc" data-i18n="compSubtitle"></p>
+        </div>
+
+        <div class="comparison-wrapper reveal-up">
+          <div class="ba-slider" id="ba-slider">
+            <img src="assets/renders/render-final.jpg" alt="Final Render" class="ba-image-after" id="comp-img-after" />
+            <span class="ba-label ba-label-after" id="comp-label-after" data-i18n="compAfterLabel">متریال‌پردازی و رندر نهایی (4K PBR)</span>
+
+            <div class="ba-before-clip" id="ba-before-clip">
+              <img src="assets/renders/render-wireframe.jpg" alt="Wireframe" class="ba-image-before" id="comp-img-before" />
+              <span class="ba-label ba-label-before" id="comp-label-before" data-i18n="compBeforeLabel">شبکه سه‌بعدی و توپولوژی (Wireframe)</span>
+            </div>
+
+            <div class="ba-handle" id="ba-handle">
+              <div class="ba-handle-line"></div>
+              <div class="ba-handle-circle">↔</div>
+              <div class="ba-handle-line"></div>
+            </div>
+
+            <input type="range" min="0" max="100" value="50" class="ba-range-input" id="ba-range-input" aria-label="Before After Slider" />
+          </div>
+
+          <div class="comp-specs-grid" id="comp-specs-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ۵. گالری ۱۰ رندر استودیویی (render01.jpg تا render10.jpg)
+         ====================================================================== -->
+    <section class="renders-section section-padding" id="renders">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" data-i18n="rendersEyebrow">DERIN STUDIO • 4K RENDER SHOWCASE</span>
+          <h2 class="section-title" data-i18n="rendersTitle">گالری رندرهای استودیویی (render01 تا render10)</h2>
+          <p class="section-desc" data-i18n="rendersDesc"></p>
+        </div>
+
+        <!-- تب‌های فیلتر دسته‌بندی رندرها -->
+        <div class="filter-tabs reveal-up" id="render-filter-tabs">
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">همه رندرها (۱۰)</button>
+          <button class="filter-btn" data-filter="ar-product" data-i18n="filterProduct">محصولات AR و تجاری</button>
+          <button class="filter-btn" data-filter="vr-asset" data-i18n="filterVr">تجهیزات VR و صنعتی</button>
+          <button class="filter-btn" data-filter="shader-study" data-i18n="filterShader">کلوزآپ متریال و شیدر</button>
+        </div>
+
+        <!-- شبکه کارت‌های رندر -->
+        <div class="renders-grid" id="renders-grid"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ۶. بخش درباره حامد همای، پایپ‌لاین کاری و مهارت‌ها
+         ====================================================================== -->
+    <section class="about-section section-padding" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-bio-col reveal-up">
+            <span class="section-eyebrow" data-i18n="aboutEyebrow">ABOUT HAMED HOMAY • WORKFLOW PIPELINE</span>
+            <h2 class="section-title" id="about-title">درباره حامد همای و Derin Studio</h2>
+            <p class="about-text" id="about-bio-text"></p>
+            <div class="workflow-cards" id="workflow-container"></div>
+          </div>
+
+          <div class="skills-col reveal-up">
+            <div class="skills-card">
+              <h3 data-i18n="skillsTitle">🛠️ نرم‌افزارها و تخصص‌های فنی</h3>
+              <p class="skills-sub" data-i18n="skillsSub"></p>
+              <div class="skills-list" id="skills-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         ۷. بخش تماس با حامد همای (Derin Studio)
+         ====================================================================== -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="contact-box reveal-up">
+          
+          <div class="contact-info-side">
+            <span class="section-eyebrow" data-i18n="contactEyebrow">CONTACT DERIN STUDIO</span>
+            <h2 class="section-title" data-i18n="contactTitle">ارتباط مستقیم با حامد همای</h2>
+            <p class="contact-desc" data-i18n="contactDesc"></p>
+
+            <!-- کارت‌های ارتباط مستقیم (تلفن، واتس‌اپ، تلگرام، ایمیل) -->
+            <div class="direct-contact-links" id="direct-contact-links"></div>
+
+            <!-- ردیف نمایش شماره تماس و ایمیل با قابلیت کپی -->
+            <div class="contact-Highlight-badges">
+              <div class="email-copy-row">
+                <span id="contact-email-display" class="mono-email">Ganbarzade@gmail.com</span>
+                <button class="btn btn-sm btn-glass" id="btn-copy-email" data-i18n="copyEmailBtn">📋 کپی ایمیل</button>
+              </div>
+              <div class="email-copy-row phone-row">
+                <a href="tel:+989351764005" id="contact-phone-display" class="mono-email" dir="ltr">+98-935-176-4005</a>
+                <span class="location-tag" id="contact-location-display"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- فرم ارسال پیام -->
+          <form class="contact-form" id="contact-form">
+            <h3 data-i18n="formTitle">ارسال سریع جزئیات پروژه</h3>
+            <div class="form-group">
+              <label for="sender-name" data-i18n="formNameLabel">نام شما یا نام مجموعه</label>
+              <input type="text" id="sender-name" required placeholder="" />
+            </div>
+            <div class="form-group">
+              <label for="project-type" data-i18n="formTypeLabel">نوع خدمات درخواستی</label>
+              <select id="project-type">
+                <option value="WebAR / GLB Modeling" data-i18n="formTypeOpt1">مدل‌سازی و خروجی GLB برای AR / WebAR</option>
+                <option value="VR / Game Asset" data-i18n="formTypeOpt2">مدل‌سازی و متریال‌پردازی برای VR / Game</option>
+                <option value="4K Product Rendering" data-i18n="formTypeOpt3">رندرینگ استودیویی و تبلیغاتی محصول</option>
+                <option value="Collaboration" data-i18n="formTypeOpt4">همکاری پروژه‌ای یا تمام‌وقت</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="project-msg" data-i18n="formMsgLabel">توضیحات پروژه</label>
+              <textarea id="project-msg" rows="4" required placeholder=""></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" data-i18n="formSubmitBtn">
+              🚀 ارسال پیام به Ganbarzade@gmail.com
+            </button>
+            <p class="form-status" id="form-status"></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       ۸. فوتر سایت
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p id="footer-rights-text">© تمامی حقوق برای Derin Studio (حامد همای) محفوظ است.</p>
+      <a href="#top" class="back-to-top" data-i18n="backToTop">بازگشت به بالا ↑</a>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       ۹. مودال بزرگ‌نمایی رندرها (Lightbox)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="lightbox-modal" aria-hidden="true">
+    <div class="modal-content lightbox-box">
+      <button class="modal-close" id="lightbox-close" aria-label="Close">✕</button>
+      <img src="" alt="" id="lightbox-img" class="lightbox-img" />
+      <div class="lightbox-details">
+        <span class="badge-category" id="lightbox-cat"></span>
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-meta">
+          <span id="lightbox-software"></span>
+          <span id="lightbox-res"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       ۱۰. مودال QR Code برای واقعیت افزوده موبایل
+       ======================================================================== -->
+  <div class="modal-backdrop" id="qr-modal" aria-hidden="true">
+    <div class="modal-content qr-box">
+      <button class="modal-close" id="qr-close" aria-label="Close">✕</button>
+      <h3 data-i18n="qrModalTitle">📱 مشاهده مدل در فضای واقعی (AR) با موبایل</h3>
+      <p data-i18n="qrModalDesc"></p>
+      <div class="qr-image-wrapper">
+        <img id="qr-code-img" src="" alt="QR Code for AR" width="220" height="220" />
+      </div>
+      <div class="qr-url-note" id="qr-url-note"></div>
+    </div>
+  </div>
+
+  <!-- اسکریپت‌های سایت -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
