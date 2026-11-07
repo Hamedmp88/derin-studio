@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derin Studio</title>
+    <meta name="description" content="محصولات را به تجربه‌های سه‌بعدی تعاملی تبدیل می‌کنیم - حامد قنبرزاده">
+    
+    <link rel="stylesheet" href="style.css?v=3">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-gradient" id="bg-gradient"></div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo">Derin Studio</h1>
+            <nav class="nav-links">
+                <a href="#portfolio">نمونه کارها</a>
+                <a href="#contact">تماس با من</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero container reveal">
+        <div class="hero-content">
+            <span class="badge">مدل‌سازی سه‌بعدی تخصصی محصولات </span>
+            <h2 class="hero-title">راهی مدرن<br>برای معرفی بهتر محصولات</h2>
+            <p class="hero-desc">
+                <br>مدل‌سازی سه‌بعدی، بهینه‌سازی برای وب، نمایش تعاملی، تغییر متریال و WebAR برای معرفی حرفه‌ای محصولات
+            </p>
+            <a href="#portfolio" class="btn-primary">مشاهده نمونه کارها ←</a>
+        </div>
+        <div class="hero-model-container">
+            <model-viewer 
+                id="hero-viewer"
+                src="assets/models/model0.glb" 
+                auto-rotate 
+                rotation-per-second="5deg" 
+                bounds="tight"
+                camera-controls="false"
+                disable-zoom 
+                disable-pan 
+                disable-tap
+                shadow-intensity="1.5"
+                shadow-softness="1"
+                environment-image="assets/models/studio_lighting.hdr"
+                exposure="1"
+                class="hero-model">
+            </model-viewer>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container reveal">
+        <div class="section-header">
+            <div class="header-title-wrapper">
+                <div class="indicator"></div>
+                <h3>نمونه کارها</h3>
+            </div>
+            <p class="subtitle">برای مشاهده مدل در محیط سه‌بعدی، روی هر تصویر کلیک کنید.</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="model-card" data-id="1">
+                <div class="card-img-wrapper"><img src="assets/models/preview1.jpg" alt="Model 1" loading="lazy"></div>
+                <div class="card-info">
+                    <h4>Chesterfield </h4>
+                    <p>مبل چسترفیلد </p>
+                </div>
+            </div>
+            
+            <div class="model-card" data-id="2">
+                <div class="card-img-wrapper"><img src="assets/models/preview2.jpg" alt="Model 2" loading="lazy"></div>
+                <div class="card-info">
+                    <h4>Pool Table</h4>
+                    <p>میز بیلیارد</p>
+                </div>
+            </div>
+
+            <div class="model-card" data-id="3">
+                <div class="card-img-wrapper"><img src="assets/models/preview3.jpg" alt="Model 3" loading="lazy"></div>
+                <div class="card-info">
+                    <h4>Polo Ralph Lauren</h4>
+                    <p>کیف دستی زنانه</p>
+                </div>
+            </div>
+
+            <div class="model-card" data-id="4">
+                <div class="card-img-wrapper"><img src="assets/models/preview4.jpg" alt="Model 4" loading="lazy"></div>
+                <div class="card-info">
+                    <h4>Heli shot</h4>
+                    <p>هلی شات</p>
+                </div>
+            </div>
+
+            <div class="model-card" data-id="5">
+                <div class="card-img-wrapper"><img src="assets/models/preview5.jpg" alt="Model 5" loading="lazy"></div>
+                <div class="card-info">
+                    <h4>Toy</h4>
+                    <p>ماشین اسباب بازی</p>
+                </div>
+            </div>
+
+            <div class="model-card placeholder-card">
+                <div class="card-img-wrapper placeholder-wrapper">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+                <div class="card-info">
+                    <h4>به‌زودی...</h4>
+                    <p>مدل‌های بیشتر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="model-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container glass">
+            
+            <div class="modal-header">
+                <h4 id="modal-title">Model Viewer</h4>
+                <button class="close-btn" id="close-modal">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <aside id="material-panel" class="material-panel hidden glass">
+                    <div id="material-controls"></div>
+                    <div class="material-info">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <p>رنگ بندی ها را امتحان کنید.</p>
+                    </div>
+                </aside>
+
+                <div class="viewer-wrapper" id="viewer-wrapper">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="container contact-section reveal">
+        <div class="section-header">
+            <div class="header-title-wrapper">
+                <div class="indicator"></div>
+                <h3>تماس با من</h3>
+            </div>
+        </div>
+        <div class="contact-content glass">
+            <div class="contact-info-side">
+                <p class="contact-text">اگر پروژه‌ای در ذهن دارید یا تمایل به همکاری دارید، از طریق راه‌های ارتباطی زیر با من در تماس باشید.</p>
+                <div class="contact-links">
+                    <a href="https://t.me/hamed_mp88" target="_blank" class="contact-btn"><span class="icon">✈️</span> Telegram : Hamed_mp88</a>
+                    <a href="https://web.rubika.ir" target="_blank" class="contact-btn"><span class="icon">📱</span> Rubika: @hamed_ghanbarzadeh</a>
+                    <a href="mailto:your_email@domain.com" class="contact-btn"><span class="icon">✉️</span> Email: Ganbarzade@gmail.com</a>
+                    <a href="tel:+989351764005" class="contact-btn full-width"><span class="icon">📞</span> <span dir="ltr">+98 935 176 4005</span></a>
+                </div>
+            </div>
+            <div class="contact-image-side">
+                <img src="pic01.jpg" alt="Derin Studio Contact" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2020 Derin Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js?v=3"></script>
+</body>
+</html>
